@@ -25,6 +25,8 @@
         }
         .container h2 {
             color: #F0A5D9;
+            margin-top: 10px; /* Reducir el margen superior */
+            margin-bottom: 10px; /* Reducir el margen inferior */
         }
         .form-group {
             margin-bottom: 15px;
@@ -57,10 +59,26 @@
         .btn:hover {
             background-color: #C9025E;
         }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px; /* Ajustar la altura para reflejar el tamaño del logo */
+            margin-bottom: 20px;
+            margin-top: 20px; /* Espacio entre la parte superior y el logo */
+        }
+        .logo {
+            max-width: 100px; /* Reducir el tamaño máximo del logo */
+            max-height: 50px; /* Reducir el tamaño máximo del logo */
+            margin-top: 20px; /* Margen superior para el logo */
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
         <h2>Registro de Nequi</h2>
         <p>Para recibir transferencias bancarias desde el extranjero, por favor registra tu Nequi.</p>
         <form>
@@ -79,10 +97,6 @@
             <div class="form-group">
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Verificar Contraseña</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
             </div>
             <button type="submit" class="btn">Registrarse</button>
         </form>
